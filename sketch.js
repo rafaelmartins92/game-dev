@@ -15,7 +15,7 @@ function setup() {
   background = new Background(imageBackground, 3);
   character = new Character(imageCharacter);
   frameRate(40);
-  // soundGame.loop();
+  soundGame.loop();
 }
 
 function draw() {
