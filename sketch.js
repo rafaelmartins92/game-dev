@@ -1,20 +1,29 @@
 let imageBackground;
 let imageGameOver;
 let imageCharacter;
-let imageEnemy;
+let imageSkeleton;
+let imageGhost;
 
 let background;
 let character;
-let enemy;
+let skeleton;
+let ghost;
 let soundGame;
 let soundGameOver;
 let soundJump;
 
-const matrixEnemy = [
+const matrixSkeleton = [
   [0, 0],
   [235, 0],
   [500, 0],
   [770, 0]
+];
+
+const matrixGhost = [
+  [0, 0],
+  [241, 0],
+  [468, 0],
+  [709, 0]
 ];
 
 const matrixCharacter = [
@@ -30,7 +39,8 @@ function preload() {
   imageBackground = loadImage('images/background/dark-florest.png');
   imageGameOver = loadImage('images/assets/game-over.png');
   imageCharacter = loadImage('images/character/fat-boy.png');
-  imageEnemy = loadImage('images/enemies/skeleton.png');
+  imageSkeleton = loadImage('images/enemies/skeleton.png');
+  imageGhost = loadImage('images/enemies/ghost.png');
   soundGame = loadSound('sounds/track.mp3');
   soundGameOver = loadSound('sounds/game-over.mp3');
   soundJump = loadSound('sounds/jump.mp3');
@@ -39,10 +49,11 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background = new Background(imageBackground, 3);
-  character = new Character(matrixCharacter, imageCharacter, 0, 195, 320, 292, 482);
-  enemy = new Enemy(matrixEnemy, imageEnemy, width - 187, 187, 210, 187, 210);
+  character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
+  skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210);
+  ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 227, 118, 227, 118);
   frameRate(10);
-  soundGame.loop();
+  // soundGame.loop();
 }
 
 function keyPressed() {
@@ -59,13 +70,16 @@ function draw() {
   character.show();
   character.applyGravity();
 
-  enemy.show();
-  enemy.move();
+  skeleton.show();
+  skeleton.move();
+  
+  ghost.show();
+  ghost.move();
 
-  if (character.isColliding(enemy)) {
+  if (character.isColliding(skeleton)) {
     image(imageGameOver, width/4, height/4);
     soundGame.stop();
-    soundGameOver.play();
+    // soundGameOver.play();
     noLopp();
   }
 }

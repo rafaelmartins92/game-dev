@@ -1,8 +1,9 @@
 class Character extends Animation {
-  constructor(matrix, image, x, width, altura, widthSprite, heightSprite) {
-    super(matrix, image, x, width, altura, widthSprite, heightSprite)
+  constructor(matrix, image, x, variationY, width, altura, widthSprite, heightSprite) {
+    super(matrix, image, x, variationY, width, altura, widthSprite, heightSprite)
     
-    this.yInitial = height - this.altura;
+    this.variationY = variationY;
+    this.yInitial = height - this.altura - this.variationY;
     this.y = this.yInitial;
 
     this.speedJump = 0;
