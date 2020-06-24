@@ -63,9 +63,9 @@ function setup() {
   background = new Background(imageBackground, 3);
   points = new Points();
   character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
-  const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 10, 0);
-  const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 170, 88, 227, 118, 10, 300);
-  const bat = new Enemy(matrixBat, imageBat, width - 65, 500, 128, 65, 128, 65, 10, 0);
+  const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 0);
+  const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 170, 88, 227, 118, 20, 300);
+  const bat = new Enemy(matrixBat, imageBat, width - 128, 650, 128, 65, 128, 65, 10, 0);
   
   enemies.push(skeleton);
   enemies.push(ghost);

@@ -8,10 +8,15 @@ class Character extends Animation {
 
     this.speedJump = 0;
     this.gravity = 3;
+    this.heightJump = - 40;
+    this.jumps = 0;
   }
 
   jump() {
-    this.speedJump = - 40;
+    if (this.jumps < 2) {
+      this.speedJump = this.heightJump;
+      this.jumps++;
+    }
   }
 
   applyGravity() {
@@ -19,7 +24,8 @@ class Character extends Animation {
     this.speedJump = this.speedJump + this.gravity;
 
     if (this.y > this.yInitial) {
-      this.y = this.yInitial
+      this.y = this.yInitial;
+      this.jumps = 0;
     }
   }
 
