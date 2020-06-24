@@ -6,6 +6,7 @@ let imageGhost;
 let imageBat;
 
 let background;
+let points;
 let character;
 let skeleton;
 let ghost;
@@ -43,6 +44,8 @@ const matrixCharacter = [
   [580, 520]
 ];
 
+const enemies = [];
+
 function preload() {
   imageBackground = loadImage('images/background/dark-florest.png');
   imageGameOver = loadImage('images/assets/game-over.png');
@@ -58,10 +61,16 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background = new Background(imageBackground, 3);
+  points = new Points();
   character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
-  skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 10, 0);
-  ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 170, 88, 227, 118, 10, 300);
-  bat = new Enemy(matrixBat, imageBat, width - 65, 500, 128, 65, 128, 65, 10, 0);
+  const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 10, 0);
+  const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 170, 88, 227, 118, 10, 300);
+  const bat = new Enemy(matrixBat, imageBat, width - 65, 500, 128, 65, 128, 65, 10, 0);
+  
+  enemies.push(skeleton);
+  enemies.push(ghost);
+  enemies.push(bat);
+
   frameRate(10);
   // soundGame.loop();
 }
@@ -76,23 +85,23 @@ function keyPressed() {
 function draw() {
   background.show();
   background.move();
+
+  points.show();
+  points.addPoint();
   
   character.show();
   character.applyGravity();
 
-  skeleton.show();
-  skeleton.move();
-  
-  ghost.show();
-  ghost.move();
-  
-  bat.show();
-  bat.move();
+  enemies.forEach(enemy => {
+    enemy.show();
+    enemy.move();
 
-  if (character.isColliding(skeleton)) {
-    image(imageGameOver, width/4, height/4);
-    soundGame.stop();
-    // soundGameOver.play();
-    // noLopp();
-  }
+    if (character.isColliding(enemy)) {
+      image(imageGameOver, width/4, height/4);
+      soundGame.stop();
+      // soundGameOver.play();
+      // noLopp();
+    }
+  })
+
 }
