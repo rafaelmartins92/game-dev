@@ -6,6 +6,7 @@ let background;
 let character;
 let enemy;
 let soundGame;
+let soundJump;
 
 const matrixEnemy = [
   [0, 0],
@@ -36,7 +37,7 @@ const matrixEnemy = [
   [105, 609],
   [210, 609],
   [315, 609],
-]
+];
 
 const matrixCharacter = [
   [0, 0],
@@ -64,7 +65,8 @@ function setup() {
 
 function keyPressed() {
   if (key === 'ArrowUp') {
-    character.jump()
+    character.jump();
+    soundJump.play();
   }
 }
 
