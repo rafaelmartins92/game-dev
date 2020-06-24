@@ -6,7 +6,7 @@ class Character extends Animation {
     this.y = this.yInitial;
 
     this.speedJump = 0;
-    this.gravity = 3;
+    this.gravity = 2;
   }
 
   jump() {
@@ -23,7 +23,7 @@ class Character extends Animation {
   }
 
   isColliding(enemy) {
-    const accuracy = 0.8;
+    const accuracy = 0.7;
     const collide = collideRectRect(
       this.x,
       this.y,
