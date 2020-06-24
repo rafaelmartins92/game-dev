@@ -21,4 +21,20 @@ class Character extends Animation {
       this.y = this.yInitial
     }
   }
+
+  isColliding(enemy) {
+    const accuracy = 0.8;
+    const collide = collideRectRect(
+      this.x,
+      this.y,
+      this.width * accuracy,
+      this.altura * accuracy,
+      enemy.x,
+      enemy.y,
+      enemy.width * accuracy,
+      enemy.altura * accuracy,
+    );
+
+    return collide;
+  }
 }

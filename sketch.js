@@ -77,4 +77,9 @@ function draw() {
 
   enemy.show();
   enemy.move();
+
+  if (character.isColliding(enemy)) {
+    console.log('colidiu')
+    noLopp();
+  }
 }
