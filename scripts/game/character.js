@@ -7,11 +7,11 @@ class Character extends Animation {
     this.y = this.yInitial;
 
     this.speedJump = 0;
-    this.gravity = 2;
+    this.gravity = 3;
   }
 
   jump() {
-    this.speedJump = - 30;
+    this.speedJump = - 40;
   }
 
   applyGravity() {
