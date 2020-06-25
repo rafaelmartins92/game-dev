@@ -5,15 +5,18 @@ let imageSkeleton;
 let imageGhost;
 let imageBat;
 
+let soundGame;
+let soundGameOver;
+let soundJump;
+
 let background;
 let points;
 let character;
 let skeleton;
 let ghost;
 let bat;
-let soundGame;
-let soundGameOver;
-let soundJump;
+
+let actualEnemy = 0;
 
 const matrixSkeleton = [
   [0, 0],
@@ -63,9 +66,9 @@ function setup() {
   background = new Background(imageBackground, 3);
   points = new Points();
   character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
-  const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 0);
-  const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 150, 170, 88, 227, 118, 20, 300);
-  const bat = new Enemy(matrixBat, imageBat, width - 128, 650, 128, 65, 128, 65, 10, 0);
+  const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 100);
+  const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 20, 100);
+  const bat = new Enemy(matrixBat, imageBat, width - 128, 600, 128, 65, 128, 65, 20, 100);
   
   enemies.push(skeleton);
   enemies.push(ghost);
@@ -92,9 +95,20 @@ function draw() {
   character.show();
   character.applyGravity();
 
-  enemies.forEach(enemy => {
-    enemy.show();
-    enemy.move();
+  const enemy = enemies[actualEnemy];
+
+  const visibleEnemy = enemy.x < - enemy.width;
+
+  enemy.show();
+  enemy.move();
+  
+  if (visibleEnemy) {
+    actualEnemy++;
+
+    if (actualEnemy > 2) {
+      actualEnemy = 0;
+    }
+  };
 
     if (character.isColliding(enemy)) {
       image(imageGameOver, width/4, height/4);
@@ -102,6 +116,5 @@ function draw() {
       // soundGameOver.play();
       // noLopp();
     }
-  })
 
 }

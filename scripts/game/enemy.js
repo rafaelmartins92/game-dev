@@ -1,6 +1,6 @@
 class Enemy extends Animation {
-  constructor(matrix, image, x, variationY, width, altura, widthSprite, heightSprite, speed, delay) {
-    super(matrix, image, x, variationY, width, altura, widthSprite, heightSprite)
+  constructor(matrix, image, x, variationY, largura, altura, widthSprite, heightSprite, speed, delay) {
+    super(matrix, image, x, variationY, largura, altura, widthSprite, heightSprite)
 
     this.speed = speed;
     this.delay = delay;
