@@ -20,8 +20,8 @@ let background_9;
 let background_10;
 // Fim Paralax
 
-let imageInitialScreen;
 // let imageBackground;
+let imageInitialScreen;
 let imageGameOver;
 let imageCharacter;
 let imageSkeleton;

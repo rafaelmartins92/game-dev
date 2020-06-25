@@ -20,9 +20,9 @@ class Game {
 
     points = new Points();
     character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
-    const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 100);
-    const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 20, 100);
-    const bat = new Enemy(matrixBat, imageBat, width - 128, 600, 128, 65, 128, 65, 40, 100);
+    const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 50);
+    const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 25, 75);
+    const bat = new Enemy(matrixBat, imageBat, width - 128, 400, 128, 65, 128, 65, 40, 150);
     
     enemies.push(skeleton);
     enemies.push(ghost);
@@ -77,7 +77,7 @@ class Game {
       this.actualEnemy = 0;
     };
 
-    enemy.speed = parseInt(random(10, 30));
+    enemy.speed = parseInt(random(25, 50));
   };
 
     if (character.isColliding(enemy)) {
