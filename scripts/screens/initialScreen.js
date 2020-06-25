@@ -1,4 +1,4 @@
-class Initial {
+class InitialScreen {
   constructor() {
 
   };
@@ -6,7 +6,7 @@ class Initial {
   draw() {
     this._imageBackground();
     this._text();
-    this.button();
+    this._button();
   };
 
   _imageBackground() {
@@ -23,6 +23,6 @@ class Initial {
   };
 
   _button() {
-
-  }
+    buttonManager.draw();
+  };
 }

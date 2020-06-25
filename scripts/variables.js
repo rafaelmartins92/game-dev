@@ -21,9 +21,10 @@ let bat;
 let game;
 let initial;
 
-let actualScreen = 'initial';
+let actualScreen = 'initialScreen';
 let screens;
 let initialScreen;
+let buttonManager;
 
 const matrixSkeleton = [
   [0, 0],

@@ -1,14 +1,15 @@
 function setup() {
-  game = new Game();
-  initial = new Initial();
   createCanvas(windowWidth, windowHeight);
   frameRate(10);
-  game.setup();
   soundGame.loop();
+  game = new Game();
+  initialScreen = new InitialScreen();
+  game.setup();
   screens = {
     game,
-    initial
+    initialScreen
   };
+  buttonManager = new ButtonManager('Iniciar', width/2, height/2);
 };
 
 function keyPressed() {
