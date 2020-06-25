@@ -1,5 +1,27 @@
+//Paralax 
+let imageGameBackground_1;
+let imageGameBackground_3;
+let imageGameBackground_4;
+let imageGameBackground_5;
+let imageGameBackground_6;
+let imageGameBackground_7;
+let imageGameBackground_8;
+let imageGameBackground_9;
+let imageGameBackground_10;
+
+let background_1;
+let background_3;
+let background_4;
+let background_5;
+let background_6;
+let background_7;
+let background_8;
+let background_9;
+let background_10;
+// Fim Paralax
+
 let imageInitialScreen;
-let imageBackground;
+// let imageBackground;
 let imageGameOver;
 let imageCharacter;
 let imageSkeleton;
@@ -10,9 +32,10 @@ let soundGame;
 let soundGameOver;
 let soundJump;
 
+
 let fontInitialScreen;
 
-let background;
+// let background;
 let points;
 let character;
 let skeleton;
