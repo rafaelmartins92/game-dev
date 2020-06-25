@@ -23,6 +23,7 @@ class InitialScreen {
   };
 
   _button() {
+    buttonManager.y = height/7 * 5;
     buttonManager.draw();
   };
 }
