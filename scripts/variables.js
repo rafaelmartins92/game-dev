@@ -45,6 +45,7 @@ let bat;
 let game;
 let initial;
 let life;
+let tape;
 
 let actualScreen = 'game';
 let screens;

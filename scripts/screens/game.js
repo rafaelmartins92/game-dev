@@ -1,24 +1,8 @@
 class Game {
   constructor() {
     this.index = 0;
-    this.map = [
-      {
-        enemy: 0,
-        speed: 10
-      },
-      {
-        enemy: 1,
-        speed: 30
-      },
-      {
-        enemy: 1,
-        speed: 15
-      },
-      {
-        enemy: 2,
-        speed: 40
-      }
-    ];
+
+    this.map = tape.map;
   };
 
   setup() {
@@ -37,7 +21,7 @@ class Game {
     // End Parallax
 
     points = new Points();
-    life = new Life(3, 3);
+    life = new Life(tape.settings.maxLife, tape.settings.initialLife);
     character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
     const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20);
     const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 25);

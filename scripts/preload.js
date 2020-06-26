@@ -24,4 +24,6 @@ function preload() {
   soundJump = loadSound('sounds/jump.mp3');
   
   fontInitialScreen = loadFont('fonts/fontInitialScreen.otf');
+
+  tape = loadJSON('tape/tape.json');
 }
