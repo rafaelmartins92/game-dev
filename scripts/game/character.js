@@ -10,6 +10,7 @@ class Character extends Animation {
     this.gravity = 3;
     this.heightJump = - 40;
     this.jumps = 0;
+    this.invincible = false;
   }
 
   jump() {
@@ -29,7 +30,18 @@ class Character extends Animation {
     }
   }
 
+  beInvincible() {
+    this.invincible = true;
+    setTimeout(() => {
+      this.invincible = false;
+    }, 1000);
+  };
+
   isColliding(enemy) {
+    if (this.invincible) {
+      return false;
+    };
+
     const accuracy = 0.7;
     const collide = collideRectRect(
       this.x,

@@ -27,6 +27,7 @@ let imageCharacter;
 let imageSkeleton;
 let imageGhost;
 let imageBat;
+let imageLife;
 
 let soundGame;
 let soundGameOver;
@@ -43,8 +44,9 @@ let ghost;
 let bat;
 let game;
 let initial;
+let life;
 
-let actualScreen = 'initialScreen';
+let actualScreen = 'game';
 let screens;
 let initialScreen;
 let buttonManager;

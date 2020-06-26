@@ -1,6 +1,24 @@
 class Game {
   constructor() {
-    this.actualEnemy = 0;
+    this.index = 0;
+    this.map = [
+      {
+        enemy: 0,
+        speed: 10
+      },
+      {
+        enemy: 1,
+        speed: 30
+      },
+      {
+        enemy: 1,
+        speed: 15
+      },
+      {
+        enemy: 2,
+        speed: 40
+      }
+    ];
   };
 
   setup() {
@@ -19,10 +37,11 @@ class Game {
     // End Parallax
 
     points = new Points();
+    life = new Life(3, 3);
     character = new Character(matrixCharacter, imageCharacter, 0, 20, 195, 320, 292, 482);
-    const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20, 50);
-    const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 25, 75);
-    const bat = new Enemy(matrixBat, imageBat, width - 128, 400, 128, 65, 128, 65, 40, 150);
+    const skeleton = new Enemy(matrixSkeleton, imageSkeleton, width - 187, 30, 187, 210, 187, 210, 20);
+    const ghost = new Enemy(matrixGhost, imageGhost, width - 118, 250, 170, 88, 227, 118, 25);
+    const bat = new Enemy(matrixBat, imageBat, width - 128, 400, 128, 65, 128, 65, 40);
     
     enemies.push(skeleton);
     enemies.push(ghost);
@@ -59,32 +78,38 @@ class Game {
 
   points.show();
   points.addPoint();
+
+  life.draw();
   
   character.show();
   character.applyGravity();
 
-  const enemy = enemies[this.actualEnemy];
-
+  const actualLine = this.map[this.index];
+  const enemy = enemies[actualLine.enemy];
   const visibleEnemy = enemy.x < - enemy.width;
 
+  enemy.speed = actualLine.speed;
   enemy.show();
   enemy.move();
   
   if (visibleEnemy) {
-    this.actualEnemy++;
-
-    if (this.actualEnemy > 2) {
-      this.actualEnemy = 0;
+    this.index++;
+    enemy.reapper();
+    if (this.index > this.map.length - 1) {
+      this.index = 0; 
     };
-
-    enemy.speed = parseInt(random(25, 50));
   };
 
     if (character.isColliding(enemy)) {
-      image(imageGameOver, width/4, height/4);
-      soundGame.stop();
-      soundGameOver.play();
-      noLopp();
+      life.loseLife();
+      character.beInvincible();
+      if (life.lifes === 0) {
+        image(imageGameOver, width/4, height/4);
+        soundGame.stop();
+        soundGameOver.play();
+        noLopp();
+      };
+    
     }
 
     // Stop Parallax

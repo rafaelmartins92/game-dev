@@ -13,6 +13,7 @@ function preload() {
   imageGameBackground_10 = loadImage('images/parallax/parallax10.png');
   // Parallax Background
   imageGameOver = loadImage('images/assets/game-over.png');
+  imageLife = loadImage('images/assets/heart.png');
   imageCharacter = loadImage('images/character/fat-boy.png');
   imageSkeleton = loadImage('images/enemies/skeleton.png');
   imageGhost = loadImage('images/enemies/ghost.png');
