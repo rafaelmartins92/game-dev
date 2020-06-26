@@ -21,6 +21,7 @@ function preload() {
   soundGame = loadSound('sounds/track.mp3');
   soundGameOver = loadSound('sounds/game-over.mp3');
   soundJump = loadSound('sounds/jump.mp3');
+  soundOuch = loadSound('sounds/ouch.mp3');
   
   fontInitialScreen = loadFont('fonts/fontInitialScreen.otf');
 

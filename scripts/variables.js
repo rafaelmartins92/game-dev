@@ -31,6 +31,7 @@ let imageLife;
 let soundGame;
 let soundGameOver;
 let soundJump;
+let soundOuch;
 
 
 let fontInitialScreen;

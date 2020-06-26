@@ -80,6 +80,7 @@ class Game {
   };
 
     if (character.isColliding(enemy)) {
+      soundOuch.play();
       life.loseLife();
       character.beInvincible();
       if (life.lifes === 0) {
