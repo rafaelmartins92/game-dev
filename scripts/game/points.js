@@ -5,7 +5,7 @@ class Points {
 
   show() {
     textSize(50);
-    textAlign(RIGHT);
+    textAlign('right');
     fill('#e5ba54')
     text(parseInt(this.points), width - 30, 50);
   }

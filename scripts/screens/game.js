@@ -6,8 +6,6 @@ class Game {
   };
 
   setup() {
-    // background = new Background(imageBackground, 3);
-
     // Start Parallax
     background_1 = new Background(imageGameBackground_1, 4);
     background_3 = new Background(imageGameBackground_3, 3);
@@ -40,9 +38,6 @@ class Game {
   };
 
   draw() {
-  // background.show();
-  // background.move();
-
   // Start Parallax
   background_10.show();
   background_10.move();

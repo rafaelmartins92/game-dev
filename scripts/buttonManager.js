@@ -4,7 +4,10 @@ class ButtonManager {
     this.x = x;
     this.y = y;
     this.button = createButton(this.text);
-    this.button.mousePressed(() => this._changeScreen());
+    this.button.mousePressed(() => {
+      this._changeScreen(),
+      soundGame.loop();
+    });
     this.button.addClass('button-screen-initial');
   };
 

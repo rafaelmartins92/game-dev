@@ -20,7 +20,6 @@ let background_9;
 let background_10;
 // Fim Paralax
 
-// let imageBackground;
 let imageInitialScreen;
 let imageGameOver;
 let imageCharacter;
@@ -36,7 +35,6 @@ let soundJump;
 
 let fontInitialScreen;
 
-// let background;
 let points;
 let character;
 let skeleton;
@@ -47,7 +45,7 @@ let initial;
 let life;
 let tape;
 
-let actualScreen = 'game';
+let actualScreen = 'initialScreen';
 let screens;
 let initialScreen;
 let buttonManager;

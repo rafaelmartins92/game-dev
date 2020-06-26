@@ -1,6 +1,5 @@
 function preload() {
   imageInitialScreen = loadImage('images/background/light-florest.png');
-  // imageBackground = loadImage('images/background/dark-florest.png');
   // Parallax Background 
   imageGameBackground_1 = loadImage('images/parallax/parallax1.png');
   imageGameBackground_3 = loadImage('images/parallax/parallax3.png');
