@@ -33,8 +33,9 @@
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#thumbsup-how-to-contribute">How To Contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#video_game-have-fun">Have Fun</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-use">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#thumbsup-how-to-contribute">How to Contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -51,7 +52,14 @@ This project was developed with the following technologies:
 -  [p5][p5]
 -  [VS Code][vc]
 
-## :information_source: How to use
+
+## :video_game: Have Fun
+
+You can play the game here:
+
+-  [Game Dev][game]
+
+## :information_source: How to Use
 
 To clone and run this application, you'll need [Git][git] and [LiveServer][ls] installed on your computer.
 
@@ -69,7 +77,7 @@ $ cd game-dev
 # Run with Live Server
 ```
 
-## :thumbsup: How To Contribute
+## :thumbsup: How to Contribute
 
 -  Make a fork;
 -  Create a branch with your feature: `git checkout -b my-feature`;
@@ -91,3 +99,4 @@ This project is under the MIT license. See the [LICENSE](https://github.com/rafa
 [p5]: https://p5js.org/
 [vc]: https://code.visualstudio.com/
 [ls]: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+[game]: https://rafaelmartins92.github.io/game-dev/
