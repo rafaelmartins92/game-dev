@@ -91,7 +91,7 @@ class Game {
         textSize(40);
         strokeWeight(7);
         stroke(0,0,0);
-        text('Pressione enter para jogar novamente', width/2, height/3 * 1.5)
+        text('pressione enter para jogar novamente', width/2, height/3 * 1.5)
         soundGame.stop();
         soundGameOver.play();
         noLoop();
