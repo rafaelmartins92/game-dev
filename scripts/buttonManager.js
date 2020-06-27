@@ -7,6 +7,7 @@ class ButtonManager {
     this.button.mousePressed(() => {
       this._changeScreen(),
       soundGame.loop();
+      endOfGame = false;
     });
     this.button.addClass('button-screen-initial');
   };

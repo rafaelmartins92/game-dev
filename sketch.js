@@ -13,6 +13,10 @@ function setup() {
 
 function keyPressed() {
   game.keyPressed(key);
+
+  if (endOfGame && key === 'Enter') {
+    window.location.reload();
+  };
 };
 
 function draw() {

@@ -84,10 +84,18 @@ class Game {
       life.loseLife();
       character.beInvincible();
       if (life.lifes === 0) {
-        image(imageGameOver, width/4, height/4);
+        image(imageGameOver, ((windowWidth/2) - (imageGameOver.width/2)), ((windowHeight/3) - (imageGameOver.height/2)));
+        textFont(fontInitialScreen);
+        textAlign('center');
+        fill(236,167,62);
+        textSize(40);
+        strokeWeight(7);
+        stroke(0,0,0);
+        text('Pressione enter para jogar novamente', width/2, height/3 * 1.5)
         soundGame.stop();
         soundGameOver.play();
-        noLopp();
+        noLoop();
+        endOfGame = true;
       };
     
     }

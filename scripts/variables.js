@@ -1,4 +1,4 @@
-//Paralax 
+// Paralax 
 let imageGameBackground_1;
 let imageGameBackground_3;
 let imageGameBackground_4;
@@ -18,38 +18,38 @@ let background_7;
 let background_8;
 let background_9;
 let background_10;
-// Fim Paralax
+// Paralax
 
 let imageInitialScreen;
 let imageGameOver;
-let imageCharacter;
+let imageLife;
 let imageSkeleton;
 let imageGhost;
 let imageBat;
-let imageLife;
+let imageCharacter;
 
 let soundGame;
 let soundGameOver;
 let soundJump;
 let soundOuch;
 
-
 let fontInitialScreen;
 
 let points;
-let character;
+let life;
 let skeleton;
 let ghost;
 let bat;
+let character;
 let game;
-let initial;
-let life;
-let tape;
-
-let actualScreen = 'initialScreen';
-let screens;
 let initialScreen;
 let buttonManager;
+let tape;
+
+let endOfGame;
+let initial;
+let screens;
+let actualScreen = 'initialScreen';
 
 const matrixSkeleton = [
   [0, 0],
