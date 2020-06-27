@@ -41,7 +41,7 @@
 
 <p align="center">
   <img alt="Scene" src="https://ik.imagekit.io/rafaelmartins/imac-scene---game-dev_2x_YpLfcQ8jO.png">
-  <img alt="Design" src="https://ik.imagekit.io/rafaelmartins/game-dev_A-dEAR9-V.gif">
+  <img alt="Design" src="https://ik.imagekit.io/rafaelmartins/game-dev_6ih3vedaA.gif">
 </p>
 
 ## :rocket: Technologies
