@@ -38,51 +38,53 @@ class Game {
   };
 
   draw() {
-  // Start Parallax
-  background_10.show();
-  background_10.move();
-  background_9.show();
-  background_9.move();
-  background_8.show();
-  background_8.move();
-  background_6.show();
-  background_6.move();
-  background_7.show();
-  background_7.move();
-  background_5.show();
-  background_5.move();
-  background_4.show();
-  background_4.move();
-  // End Parallax
+    // Start Parallax
+    background_10.show();
+    background_10.move();
+    background_9.show();
+    background_9.move();
+    background_8.show();
+    background_8.move();
+    background_6.show();
+    background_6.move();
+    background_7.show();
+    background_7.move();
+    background_5.show();
+    background_5.move();
+    background_4.show();
+    background_4.move();
+    // End Parallax
 
-  points.show();
-  points.addPoint();
+    points.show();
+    points.addPoint();
 
-  life.draw();
-  
-  character.show();
-  character.applyGravity();
+    life.draw();
+    
+    character.show();
+    character.applyGravity();
 
-  const actualLine = this.map[this.index];
-  const enemy = enemies[actualLine.enemy];
-  const visibleEnemy = enemy.x < - enemy.width;
+    const actualLine = this.map[this.index];
+    const enemy = enemies[actualLine.enemy];
+    const visibleEnemy = enemy.x < - enemy.width;
 
-  enemy.speed = actualLine.speed;
-  enemy.show();
-  enemy.move();
-  
-  if (visibleEnemy) {
-    this.index++;
-    enemy.reapper();
-    if (this.index > this.map.length - 1) {
-      this.index = 0; 
+    enemy.speed = actualLine.speed;
+    enemy.show();
+    enemy.move();
+    
+    if (visibleEnemy) {
+      this.index++;
+      enemy.reapper();
+
+      if (this.index > this.map.length - 1) {
+        this.index = 0; 
+      };
     };
-  };
 
     if (character.isColliding(enemy)) {
       soundOuch.play();
       life.loseLife();
       character.beInvincible();
+
       if (life.lifes === 0) {
         image(imageGameOver, ((windowWidth/2) - (imageGameOver.width/2)), ((windowHeight/3) - (imageGameOver.height/2)));
         textFont(fontInitialScreen);
@@ -97,13 +99,6 @@ class Game {
         noLoop();
         endOfGame = true;
       };
-    
-    }
-
-    // Stop Parallax
-    background_3.show();
-    background_1.show();
-    background_1.move();
-    background_3.move();
+    };    
   };
-}
+};
