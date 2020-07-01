@@ -27,7 +27,7 @@
   <br>To help him we need to bounce the enemies pressing the Arrow Up key ⬆️.
   <br>We can jump only 2 times per enemy.</p>
     
-  <p>This application was based on the Imersão Game Dev from Alura.</p>
+  <p>This application was based on Imersão Game Dev from Alura.</p>
 </h4>
 
 
